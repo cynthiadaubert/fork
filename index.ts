@@ -4,6 +4,13 @@ class Product {
   constructor(name: string, price: number) {
     this.name = name;
     this.price = price;
+  } 
+  static findProductsBelow(price: number){
+    const preioBajo =products.filter((p)=>{
+      return p.price < price ;
+    });
+    return preioBajo;
+
   }
   id: number;
   name: string;
@@ -20,7 +27,7 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    this.products.concat(newProducts);
   }
 }
 
